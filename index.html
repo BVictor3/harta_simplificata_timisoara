@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Timișoara simplificată</title>
+<meta name="description" content="Hartă simplificată a Timișoarei: Bega, căile, cartierele, bulevardele și reperele, ca un ceas.">
+<meta name="theme-color" content="#f6f3ec">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="map" aria-label="Harta Timișoarei"></div>
+
+<aside id="panel">
+  <header>
+    <h1>Timișoara ca un ceas</h1>
+    <button id="collapse" aria-expanded="true" aria-controls="panel-body" title="Ascunde / arată">▾</button>
+  </header>
+  <div id="panel-body">
+    <p class="hint">Centrul e mijlocul ceasului, Bega e axa vest–est. Fiecare <b>cale</b> poartă numele orașului spre care duce. <b>Calea Aradului = ora 12.</b></p>
+
+    <ol id="layers">
+      <li><label><input type="checkbox" data-layer="1" checked> <span class="sw sw-cai"></span> Centrul, Bega și căile</label></li>
+      <li><label><input type="checkbox" data-layer="2"> <span class="sw sw-cart"></span> Cartierele</label></li>
+      <li><label><input type="checkbox" data-layer="3"> <span class="sw sw-bd"></span> Bulevardele și inelele</label></li>
+      <li><label><input type="checkbox" data-layer="4"> <span class="sw sw-rep"></span> Reperele</label></li>
+    </ol>
+    <div class="row">
+      <button id="next" class="primary">Următorul strat →</button>
+      <button id="reset">De la început</button>
+    </div>
+    <div class="row toggles">
+      <label><input type="checkbox" id="t-clock" checked> Cadranul ceasului</label>
+      <label><input type="checkbox" id="t-mine" checked> Locurile mele</label>
+    </div>
+
+    <details id="mine-list">
+      <summary>Locurile mele</summary>
+      <ul></ul>
+    </details>
+
+    <div class="row">
+      <button id="locate">📍 Unde sunt acum?</button>
+    </div>
+    <div id="where" hidden></div>
+    <p class="src">Date: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a> prin Overpass API · <span id="gen"></span></p>
+  </div>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
